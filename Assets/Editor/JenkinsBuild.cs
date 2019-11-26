@@ -18,24 +18,24 @@ public class JenkinsBuild
     //   +1: JenkinsBuild.BuildMacOS
     //   +2: VRDungeons
     //   +3: /Users/Shared/Jenkins/Home/jobs/VRDungeons/builds/47/output
-    string[] args = System.Environment.GetCommandLineArgs();
-    for (int i=0; i<args.Length; i++){
-      if (args[i] == "-executeMethod"){
-        if (i+4 < args.Length){
-          // BuildMacOS method is args[i+1]
-          appName = args[i+2];
-          targetDir = args[i+3];
-          i += 3;
-        }
-        else {
-          System.Console.WriteLine("[JenkinsBuild] Incorrect Parameters for -executeMethod Format: -executeMethod BuildMacOS <app name> <output dir>");
-          return;
-        }
-      }
-    }
+//    string[] args = System.Environment.GetCommandLineArgs();
+//    for (int i=0; i<args.Length; i++){
+//      if (args[i] == "-executeMethod"){
+//        if (i+4 < args.Length){
+//          // BuildMacOS method is args[i+1]
+//          appName = args[i+2];
+//          targetDir = args[i+3];
+//          i += 3;
+//        }
+//        else {
+//          System.Console.WriteLine("[JenkinsBuild] Incorrect Parameters for -executeMethod Format: -executeMethod BuildMacOS <app name> <output dir>");
+//          return;
+//        }
+//      }
+//    }
 
     // e.g. // /Users/Shared/Jenkins/Home/jobs/VRDungeons/builds/47/output/VRDungeons.app
-    string fullPathAndName = targetDir + System.IO.Path.DirectorySeparatorChar + appName + ".app";
+    string fullPathAndName = "/Users/sunyajie/Desktop" + "JenkinsTest" + ".app";
     BuildProject(EnabledScenes, fullPathAndName, BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX, BuildOptions.None);
   }
 
