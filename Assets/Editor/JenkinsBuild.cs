@@ -35,7 +35,7 @@ public class JenkinsBuild
 //    }
 
     // e.g. // /Users/Shared/Jenkins/Home/jobs/VRDungeons/builds/47/output/VRDungeons.app
-    string fullPathAndName = "/Users/sunyajie/Desktop" + "JenkinsTest" + ".app";
+    string fullPathAndName = "/Users/sunyajie/Desktop/" + "JenkinsTest" + ".app";
     BuildProject(EnabledScenes, fullPathAndName, BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX, BuildOptions.None);
   }
 
